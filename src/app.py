@@ -13,7 +13,24 @@ app.url_map.strict_slashes = False
 CORS(app)
 
 # create the jackson family object
-jackson_family = FamilyStructure("Jackson")
+jackson_family = FamilyStructure("Jackson",[
+        {  
+           "name": "Jhon",
+           "last_name": "Jackson",
+           "age": [33],
+           "lucky_numbers": [7,13,22]
+        },
+        {  
+           "name": "Jane",
+           "age": [35],
+           "lucky_numbers": [10,14,3]
+        },
+        {  
+           "name": "Jimmy",
+           "age": [5],
+           "lucky_numbers": [1]
+        },
+        ])
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
